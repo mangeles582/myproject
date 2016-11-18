@@ -25,7 +25,7 @@ data <- read.table("data.txt", header=T)
 #data[10,1] <- 11   # correct error
 
 # Fit linear model
-model <- lm(happiness ~ sunshine, data=data)
+model <- lm(happiness ~ sunshine+ sunshine^2, data=data)
 
 ```
 
