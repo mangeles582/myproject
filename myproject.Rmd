@@ -6,7 +6,7 @@ output:
   word_document: default
   pdf_document: default
 bibliography: crossref.bib
-csl: ecology.csl# hay que descargarselo y guardarlo
+
 ---
 
 
@@ -31,7 +31,7 @@ model <- lm(happiness ~ sunshine, data=data)
 
 We collected data on `r nrow(data)` individuals and fitted a linear model.# metes codigo de r entre comillas simples `r row (data)`
 
-
+dkkgiekdiek ddkdmmdn
 
 Results
 -------
@@ -70,6 +70,6 @@ sessionInfo()
 
 ```{r}
 library(checkpoint)
-checkpoint("2016-05-12")# ese script funcionaba el 12 de mayo, y así puede volver al estado de los paquetes en ese momento, el problema que tiene es que la carpeta de los paquetes puede crecer muchisimo muy pronto.
+checkpoint("2016-05-12")# ese script funcionaba el 12 de mayo, y as? puede volver al estado de los paquetes en ese momento, el problema que tiene es que la carpeta de los paquetes puede crecer muchisimo muy pronto.
 ```
 
