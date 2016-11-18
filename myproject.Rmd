@@ -1,0 +1,75 @@
+---
+title: "Does sunshine make people happy?"
+author: "F. Rodriguez-Sanchez"
+date: "Thursday, 17 November 2016"
+output:
+  word_document: default
+  pdf_document: default
+bibliography: crossref.bib
+csl: ecology.csl# hay que descargarselo y guardarlo
+---
+
+
+Introduction
+------------
+
+It is well known that individual well-being [@Elith_2010] can be influenced by climatic conditions. However, ...
+
+
+Methods
+-------
+
+```{r echo=FALSE} 
+## Read data
+data <- read.table("data.txt", header=T)
+#data[10,1] <- 11   # correct error
+
+# Fit linear model
+model <- lm(happiness ~ sunshine, data=data)
+
+```
+
+We collected data on `r nrow(data)` individuals and fitted a linear model.# metes codigo de r entre comillas simples `r row (data)`
+
+
+
+Results
+-------
+
+We found that...
+
+```{r echo=FALSE, results='asis'}
+# Print results
+library(xtable, quietly=T)
+library(knitr)
+kable(xtable(model)) # para que te haga una tabla
+```
+
+```{r echo=FALSE}
+# Plot
+library(visreg, quietly=T)
+visreg(model)
+```
+
+Discussion
+----------
+
+These results confirm that sunshine is good for happiness (slope = `r coef(model)[2]`).
+
+
+Acknowledgements
+----------------
+
+Y. Xie, J. MacFarlane, Rstudio...
+
+
+```{r}
+sessionInfo()
+```
+
+
+```{r}
+library(checkpoint)
+checkpoint("2016-05-12")# ese script funcionaba el 12 de mayo, y así puede volver al estado de los paquetes en ese momento, el problema que tiene es que la carpeta de los paquetes puede crecer muchisimo muy pronto.
+```
+
